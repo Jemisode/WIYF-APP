@@ -1,4 +1,4 @@
-import { createStore, applyMiddleware, compose } from "redux";
+import { createStore, applyMiddleware, compose } from 'redux';
 
 // needed to implement redux-localstorage
 // import persistState from 'redux-localstorage';

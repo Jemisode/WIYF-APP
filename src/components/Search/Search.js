@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 class Search extends Component {
     constructor(props) {
@@ -30,7 +30,7 @@ class Search extends Component {
 
     render() {
         let { ingredient } = this.state;
-        let { ingredients, handleClick, chosenIngredients } = this.props;
+        let { ingredients, chosenIngredients } = this.props;
 
         return (
             <form className="col-sm">
