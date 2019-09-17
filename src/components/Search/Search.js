@@ -19,11 +19,13 @@ class Search extends Component {
     } 
 
     handleClick() {
-        if (this.props.chosenIngredients.length <= 2) {
-            let ingredient = this.state.ingredient;
-            this.props.handleIngredient(ingredient);
+        let ingredient = this.state.ingredient;
+        let { ingredients, chosenIngredients, handleIngredient } = this.props;
+
+        if (chosenIngredients.length <= 2 && ingredients.includes(ingredient)) {
+            handleIngredient(ingredient);
             this.setState({ ingredient: "" });
-        }
+        } // include else with error message - needs to be ingredient on list & no more than 3
     }
 
     render() {
