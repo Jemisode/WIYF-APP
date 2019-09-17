@@ -9,8 +9,6 @@ import { createStore, applyMiddleware, compose } from "redux";
 import initial from './initial';
 import reducer from './reducer';
 
-console.log(initial);
-
 // needed to implement redux-localstorage && thunk with redux devtools
 // const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
