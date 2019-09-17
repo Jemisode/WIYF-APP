@@ -8,6 +8,7 @@ import {
 import Header from './Header';
 import Search from './Search';
 import RecipeList from './RecipeList';
+import Recipe from './Recipe';
 
 const App = () => (
     <Router>
@@ -15,6 +16,7 @@ const App = () => (
             <Header />
             <Route exact path="/" component={ Search} />
             <Route exact path="/recipes" component={ RecipeList } />
+            <Route exact path="/recipe" component={ Recipe } />
             
         </>
     </Router>

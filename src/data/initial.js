@@ -54,7 +54,15 @@ const initial = {
             prepTime: "45 mins",
             serves: 10
         }
-    ]
+    ],
+    recipe: {
+        name: "Tomato",
+        description: "A tasty tomato",
+        imageSrc: "/static/media/tomato.f63d4fd4.jpg",
+        imageAlt: "A tasty tomato",
+        prepTime: "45 mins",
+        serves: 10
+    }
     
 };
 
