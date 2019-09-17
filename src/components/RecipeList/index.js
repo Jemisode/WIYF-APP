@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
  
-import RecipeListCard from './RecipeListCard';
+import RecipeList from './RecipeList';
 
 const mapStateToProps = state => { 
     return { 
@@ -8,4 +8,4 @@ const mapStateToProps = state => {
     }; 
 };
 
-export default connect(mapStateToProps)(RecipeListCard);
+export default connect(mapStateToProps)(RecipeList);
