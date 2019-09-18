@@ -7,9 +7,17 @@ const addIngredient = (state, { ingredient }) => {
     };
 };
 
+const removeIngredient = (state, { ingredient }) => {
+    return {
+        ...state,
+        chosenIngredients: state.chosenIngredients.filter(item => item !== ingredient), 
+    };
+};
+
 const reducer = (state, action) => {
     switch (action.type) { 
-        case "change": return addIngredient(state, action);
+        case "add": return addIngredient(state, action);
+        case "remove": return removeIngredient(state, action);
         default: return state;
     }; 
 };

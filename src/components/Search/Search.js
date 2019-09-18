@@ -11,6 +11,7 @@ class Search extends Component {
 
         this.handleChange = this.handleChange.bind(this);
         this.handleClick = this.handleClick.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
     }   
     
     handleChange(e) {
@@ -30,6 +31,10 @@ class Search extends Component {
         } else {
             this.setState({ error: true });
         }
+    }
+
+    handleDelete(e, ingredient) {
+        this.props.handleRemoveIngredient(ingredient);
     }
 
     render() {
@@ -61,9 +66,12 @@ class Search extends Component {
 
                 <div className="form-group">
                     <h3>Ingredients</h3>
-                    <ul>
+                    <ul className="col">
                         { chosenIngredients.map((ingredient, index) => (
-                            <li key={ index }>{ ingredient }</li>
+                            <div key={ index } className="row">
+                                <li><h5>{ ingredient }</h5></li>
+                                <button onClick={ (e) => this.handleDelete(e, ingredient) } className="btn btn-danger btn-sm">X</button>
+                            </div>
                         )) }
                     </ul>
 

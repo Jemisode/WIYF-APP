@@ -1,3 +1,7 @@
 export const addIngredient = (ingredient) => {
-    return { type: "change", ingredient: ingredient };
+    return { type: "add", ingredient: ingredient };
+};
+
+export const removeIngredient = (ingredient) => {
+    return { type: "remove", ingredient: ingredient };
 };
