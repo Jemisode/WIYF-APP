@@ -5,7 +5,8 @@ class Search extends Component {
         super(props);
 
         this.state = {
-            ingredient: ""
+            ingredient: "",
+            error: false
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -15,6 +16,7 @@ class Search extends Component {
     handleChange(e) {
         this.setState({
             ingredient: e.currentTarget.value,
+            error: false
         });
     } 
 
@@ -22,20 +24,22 @@ class Search extends Component {
         let ingredient = this.state.ingredient;
         let { ingredients, chosenIngredients, handleIngredient } = this.props;
 
-        if (chosenIngredients.length <= 2 && ingredients.includes(ingredient)) {
+        if (chosenIngredients.length <= 2 && ingredients.includes(ingredient) && !chosenIngredients.includes(ingredient)) {
             handleIngredient(ingredient);
             this.setState({ ingredient: "" });
-        } // include else with error message - needs to be ingredient on list & no more than 3
+        } else {
+            this.setState({ error: true });
+        }
     }
 
     render() {
-        let { ingredient } = this.state;
+        let { ingredient, error } = this.state;
         let { ingredients, chosenIngredients } = this.props;
 
         return (
             <form className="col-sm">
                 <div className="form-group">
-                    <label htmlFor="ingredient-choice" >Pick up to 3 Ingredients</label>
+                    <label htmlFor="ingredient-choice" >Pick Your Ingredients</label>
                     <input
                         type="text"
                         className="form-control"
@@ -52,6 +56,7 @@ class Search extends Component {
                     </datalist>
 
                     <button type="button" className="btn btn-primary" onClick={ this.handleClick }>Add</button>
+                    { error ? <p className="text-danger">Please pick up to 3 different ingredients, from our list</p> : null }
                 </div>
 
                 <div className="form-group">
