@@ -43,43 +43,45 @@ class Search extends Component {
         let { ingredients, chosenIngredients } = this.props;
 
         return (
-            <form className="col-sm">
-                <div className="form-group">
-                    <label htmlFor="ingredient-choice" >Pick Your Ingredients</label>
-                    <input
-                        type="text"
-                        className="form-control"
-                        onChange={ (e) => this.handleChange(e) }
-                        value={ ingredient }
-                        list="ingredients"
-                        id="ingredient-choice"
-                    />
+            <div className="card bg-info text-white d-flex align-items-center" >
+                <form className="">
+                    <div className="form-group">
+                        <label htmlFor="ingredient-choice" >Pick Your Ingredients</label>
+                        <input
+                            type="text"
+                            className="form-control"
+                            onChange={ (e) => this.handleChange(e) }
+                            value={ ingredient }
+                            list="ingredients"
+                            id="ingredient-choice"
+                        />
 
-                    <datalist id="ingredients">
-                        { ingredients.map((ingredient, index) => (
-                            <option key={ index } value={ ingredient } />
-                        )) }
-                    </datalist>
+                        <datalist id="ingredients">
+                            { ingredients.map((ingredient, index) => (
+                                <option key={ index } value={ ingredient } />
+                            )) }
+                        </datalist>
 
-                    <button type="button" className="btn btn-primary" onClick={ this.handleClick }>Add</button>
-                    { error ? <p className="text-danger">Please pick up to 3 different ingredients, from our list</p> : null }
-                </div>
+                        <button type="button" className="btn btn-primary btn-block" onClick={ this.handleClick }>Add</button>
+                        { error ? <p className="text-danger">Please pick up to 3 different ingredients, from our list</p> : null }
+                    </div>
 
-                <div className="form-group">
-                    <h3>Ingredients</h3>
-                    <ul className="col">
-                        { chosenIngredients.map((ingredient, index) => (
-                            <div key={ index } className="row">
-                                <li><h5>{ ingredient }</h5></li>
-                                <button onClick={ (e) => this.handleDelete(e, ingredient) } className="btn btn-danger btn-sm">X</button>
-                            </div>
+                    <div className="form-group">
+                        <h3>Ingredients</h3>
+                        <ul className="col">
+                            { chosenIngredients.map((ingredient, index) => (
+                                <div key={ index } className="row">
+                                    <li><h5>{ ingredient }</h5></li>
+                                    <button onClick={ (e) => this.handleDelete(e, ingredient) } className="btn btn-danger btn-sm">X</button>
+                                </div>
                         )) }
                     </ul>
-
-                    <button type="submit" className="btn btn-primary" >Find Recipes</button>
+        
+                    <button type="submit" className="btn btn-primary btn-block" >Find Recipes</button>
                 </div>
                     
             </form>
+        </div>
         );
     };
 }
