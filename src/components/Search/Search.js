@@ -34,6 +34,7 @@ class Search extends Component {
     }
 
     handleDelete(e, ingredient) {
+        e.preventDefault();
         this.props.handleRemoveIngredient(ingredient);
     }
 
