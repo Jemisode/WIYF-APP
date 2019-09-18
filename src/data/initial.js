@@ -61,7 +61,28 @@ const initial = {
         imageSrc: "/static/media/tomato.f63d4fd4.jpg",
         imageAlt: "A tasty tomato",
         prepTime: "45 mins",
-        serves: 10
+        serves: 10,
+        ingredients: [
+            {
+                name: "tomato",
+                amount: "1"
+            },
+            {
+                name: "salt",
+                amount: "a pinch"
+            },
+            {
+                name: "pepper",
+                amount: "1 teaspoon"
+            }
+        ],
+        method: [ 
+            "Cut up the tomato", 
+            "Salt the tomato", 
+            "Rub in the pepper", 
+            "Enjoy!" 
+        ]
+
     }
     
 };
