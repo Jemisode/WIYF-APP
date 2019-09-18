@@ -1,10 +1,10 @@
 import React from 'react';
 
 const Ingredients = ({ recipe }) => (
-    <ol>
-        { recipe.method.map((step, index) => (
-            <li key={ index }>{ step }</li>
+    <ul>
+        { recipe.method.split("#").map((step, index) => (
+            step !== "" ? <li key={ index }>{ step }</li> : null
         ))}
-    </ol>
+    </ul>
 );
 export default Ingredients;

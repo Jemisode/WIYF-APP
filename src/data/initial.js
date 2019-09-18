@@ -76,12 +76,7 @@ const initial = {
                 amount: "1 teaspoon"
             }
         ],
-        method: [ 
-            "Cut up the tomato", 
-            "Salt the tomato", 
-            "Rub in the pepper", 
-            "Enjoy!" 
-        ]
+        method: "#Step 1 : Cut up the tomato #Step 2 : Salt the tomato #Step 3 : Rub pepper on the tomato #Step 4 : Enjoy!"
 
     }
     
