@@ -20,7 +20,7 @@ class RecipeList extends Component {
 
     handleClick() {
         this.state.recipesDisplayed === 5 ? (
-            this.setState({ recipesDisplayed: this.props.recipes.length, expanded: true })
+            this.setState({ recipesDisplayed: this.state.recipes.length, expanded: true })
         ) : (
             this.setState({ recipesDisplayed: 5, expanded: false })
         )
@@ -46,28 +46,30 @@ class RecipeList extends Component {
         let { recipesDisplayed, recipes, loaded } = this.state;
 
         return !loaded ? <p>Loading...</p> : (
-            <div className="container">
+            <div className="d-flex container flex-column justify-content-center">
                 { recipes.slice(0, recipesDisplayed).map((recipe, index) => (
-                    <Link to="/my-recipe">
-                        <div onClick={ (e) => this.handleChoice(e, recipe.id) } key={index} className="card">
+                    <Link key={index} to="/my-recipe">
+                        <div onClick={ (e) => this.handleChoice(e, recipe.id) } className="card bg-info text-white d-flex align-items-center my-4">
                             <div className="row no-gutters">
                                 <div className="col-md-4">
                                 <img src={ recipe.image_url } className="card-img" alt={ recipe.image_alt } />
                                 </div>
                                 <div className="col-md-8">
-                                <div className="card-body">
-                                    <h3 className="card-title">{ recipe.name }</h3>
-                                    <p className="card-text">{ recipe.description }</p>
-                                    <p><small className="text-muted">Serves { recipe.num_servings }</small></p>
-                                    <p><small className="text-muted">Prep time { recipe.prep_time }</small></p>
-                                </div>
+                                    <div className="card-body">
+                                        <h3 className="card-title">{ recipe.name }</h3>
+                                        <p className="card-text">{ recipe.description }</p>
+                                        <div className="d-flex flex-row justify-content-center card bg-warning">
+                                            <p className="d-inline text-secondary text-center font-weight-bold m-2 mr-5">Serves { recipe.num_servings }</p>
+                                            <p className="d-inline text-secondary text-center font-weight-bold m-2 ml-5">Prep time { recipe.prep_time }</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </Link>
                 )) }
 
-                <button className="btn btn-primary" onClick={ this.handleClick }>
+                <button className="btn btn-warning text-secondary font-weight-bold border border-info m-3 mb-4" onClick={ this.handleClick }>
                     { this.state.expanded ?  <span>Show less</span> : <span>Show more</span> }
                 </button>
             </div> 
