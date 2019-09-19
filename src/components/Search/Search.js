@@ -66,14 +66,14 @@ class Search extends Component {
 
         return !loaded ? <p>Loading...</p> : (
             <div className="d-flex flex-column justify-content-center text-center" style={{ height: "70vh" }}>
-                <div className="card bg-info text-white d-flex align-items-center">
+                <div className="card bg-info text-white d-flex align-items-center py-5">
                     <form className="">
-                        <div className="form-group" style={{ maxWidth: 200 }}>
-                            <label htmlFor="ingredient-choice">Pick Your Ingredients</label>
+                        <div className="form-group" style={{ maxWidth: 250 }}>
+                            <label htmlFor="ingredient-choice"><h4>Pick Your Ingredients</h4></label>
 
                             <input
                                 type="text"
-                                className="form-control"
+                                className="form-control my-2"
                                 onChange={ (e) => this.handleChange(e) }
                                 value={ ingredient }
                                 list="ingredients"
@@ -86,18 +86,18 @@ class Search extends Component {
                                 )) }
                             </datalist>
 
-                            <button type="button" className="btn btn-primary btn-block" onClick={ this.handleClick }>Add</button>
+                            <button type="button" className="btn btn-primary btn-block my-3" onClick={ this.handleClick }>Add</button>
 
                             { error ? <p className="text-warning">Please pick up to 3 different ingredients, from our list</p> : null }
                         </div>
 
                         <div className="form-group">
-                            <h3>Ingredients</h3>
+                            <h4>Ingredients</h4>
                             <ul className="col">
                                 { chosenIngredients.map((ingredient, index) => (
                                     <div key={ index } className="row">
                                         <li><h5>{ ingredient }</h5></li>
-                                        <button onClick={ (e) => this.handleDelete(e, ingredient) } className="btn btn-danger btn-sm">X</button>
+                                        <button onClick={ (e) => this.handleDelete(e, ingredient) } className="btn btn-danger btn-sm ml-3 font-weight-bold">X</button>
                                     </div>
                                 )) }
                             </ul>
