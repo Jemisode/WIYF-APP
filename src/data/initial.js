@@ -4,7 +4,7 @@ console.log(placeholder);
 
 const initial = {
     chosenIngredients: [],
-    chosenRecipe: 0
+    chosenRecipe: 1
 };
 
 export default initial;

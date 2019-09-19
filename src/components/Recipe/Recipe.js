@@ -30,11 +30,13 @@ class Recipe extends Component {
         let { recipe, loaded } = this.state;
 
         return !loaded ? <p>Loading...</p> : (
-            <div>
+            <div className="card bg-info text-white d-flex align-items-center p-4 mt-5">
                 <h2>{ recipe.name }</h2>
-                <p>{ recipe.description }</p>
-                <p><small className="text-muted">Serves { recipe.num_servings }</small></p>
-                <p><small className="text-muted">Prep time { recipe.prep_time }</small></p>
+                <p className="mt-3">{ recipe.description }</p>
+                <div className="d-flex flex-row justify-content-center card bg-warning m-0 mt-4">
+                    <p className="d-inline text-secondary text-center font-weight-bold m-2 mr-5">Serves { recipe.num_servings }</p>
+                    <p className="d-inline text-secondary text-center font-weight-bold m-2 ml-5">Prep time { recipe.prep_time }</p>
+                </div>
                 <Tabs ingredients={ recipe.ingredients } method={ recipe.method } />
             </div>
             

@@ -8,7 +8,7 @@ class Tabs extends Component {
         super(props);
 
         this.state = {
-            ingredients: true
+            ingredients: true 
         };
 
         this.handleIngredients = this.handleIngredients.bind(this);
@@ -28,16 +28,16 @@ class Tabs extends Component {
 
         return (
             <>
-                <div className="tab">
-                    <button className="tablinks" onClick={ this.handleIngredient }>Ingredients</button>
-                    <button className="tablinks" onClick={ this.handleMethod }>Method</button>
+                <div className="tab d-flex flex-row btn-group card bg-warning mx-3 mt-5" role="group">
+                    <button className={`tablinks d-inline btn btn-warning text-dark font-weight-bold px-5 border border-info ${ ingredients ? "active" : null }`} type="button" onClick={ this.handleIngredients }>Ingredients</button>
+                    <button className="tablinks d-inline btn btn-warning text-dark font-weight-bold px-5 border border-info" type="button" onClick={ this.handleMethod }>Method</button>
                 </div>
 
                 { ingredients ? 
-                    <div id="Ingredients" className="tabcontent">
+                    <div id="Ingredients" className="tabcontent card bg-warning text-dark d-flex w-100 p-2">
                         <Ingredients ingredients={ this.props.ingredients }/>
                     </div> :
-                    <div id="Method" className="tabcontent">
+                    <div id="Method" className="tabcontent card bg-warning text-dark d-flex w-100 p-2">
                         <Method method={ this.props.method }/>
                     </div> 
                 }
