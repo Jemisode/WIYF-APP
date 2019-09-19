@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Ingredients = ({ recipe }) => (
+const Ingredients = ({ method }) => (
     <ul>
-        { recipe.method.split("#").map((step, index) => (
+        { method.split("#").map((step, index) => (
             step !== "" ? <li key={ index }>{ step }</li> : null
         ))}
     </ul>

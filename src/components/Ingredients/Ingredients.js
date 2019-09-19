@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Ingredients = ({ recipe }) => (
+const Ingredients = ({ ingredients }) => (
     <ul>
-        { recipe.ingredients.map((ingredient, index) => (
-            <li key={ index }>{ ingredient.name } - { ingredient.amount }</li>
+        { ingredients.map((ingredient, index) => (
+            <li key={ index }>{ ingredient.name } - { ingredient.quantity }</li>
         ))}
     </ul>
 );

@@ -4,7 +4,7 @@ import Recipe from './Recipe';
 
 const mapStateToProps = state => { 
     return { 
-        recipe: state.recipe,
+        recipe: state.chosenRecipe,
     }; 
 };
 

@@ -1,30 +1,30 @@
 import React, { Component } from 'react';
 
-import Method from '../Method';
-import Ingredients from '../Ingredients';
+import Method from '../Method/Method';
+import Ingredients from '../Ingredients/Ingredients';
 
 class Tabs extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            ingredient: true
+            ingredients: true
         };
 
-        this.handleIngredient = this.handleIngredient.bind(this);
+        this.handleIngredients = this.handleIngredients.bind(this);
         this.handleMethod = this.handleMethod.bind(this);
     }   
     
-    handleIngredient() {
-       this.setState({ ingredient: true })
+    handleIngredients() {
+       this.setState({ ingredients: true })
     }
 
     handleMethod() {
-        this.setState({ ingredient: false })
+        this.setState({ ingredients: false })
      }
 
     render() {
-        let { ingredient } = this.state;
+        let { ingredients } = this.state;
 
         return (
             <>
@@ -33,12 +33,12 @@ class Tabs extends Component {
                     <button className="tablinks" onClick={ this.handleMethod }>Method</button>
                 </div>
 
-                { ingredient ? 
-                    <div id="Ingredient" className="tabcontent">
-                        <Ingredients />
+                { ingredients ? 
+                    <div id="Ingredients" className="tabcontent">
+                        <Ingredients ingredients={ this.props.ingredients }/>
                     </div> :
                     <div id="Method" className="tabcontent">
-                        <Method />
+                        <Method method={ this.props.method }/>
                     </div> 
                 }
             </>

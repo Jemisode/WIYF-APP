@@ -1,11 +1,12 @@
 import { connect } from 'react-redux';
  
 import RecipeList from './RecipeList';
+import { updateRecipe } from '../../data/actions/state'
 
-const mapStateToProps = state => { 
+const mapDispatchToProps = dispatch => { 
     return { 
-        recipes: state.recipes,
+        updateRecipe: (id) => dispatch(updateRecipe(id)),
     }; 
 };
 
-export default connect(mapStateToProps)(RecipeList);
+export default connect(null, mapDispatchToProps)(RecipeList);
