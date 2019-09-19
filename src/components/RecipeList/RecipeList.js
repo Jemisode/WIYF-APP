@@ -31,6 +31,7 @@ class RecipeList extends Component {
     }
 
     componentDidMount() {
+        // get request will change once API search function is working
         axios.get("/recipes").then(({ data }) => {
             let recipes = data.data;
             this.setState({

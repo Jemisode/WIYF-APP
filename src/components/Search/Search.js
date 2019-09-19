@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+
 import axios from '../../axios';
 
 class Search extends Component {
@@ -100,7 +102,9 @@ class Search extends Component {
                                 )) }
                             </ul>
                 
-                            <button type="submit" className="btn btn-primary btn-block" >Find Recipes</button>
+                            <Link to='/recipes'>
+                                <button type="submit" className="btn btn-primary btn-block" >Find Recipes</button>
+                            </Link>
                         </div> 
                     </form>
                 </div>
