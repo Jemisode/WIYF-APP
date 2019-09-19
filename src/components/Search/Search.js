@@ -86,7 +86,7 @@ class Search extends Component {
                                 )) }
                             </datalist>
 
-                            <button type="button" className="btn btn-primary btn-block my-3" onClick={ this.handleClick }>Add</button>
+                            <button type="button" className="btn btn-warning btn-block my-3 text-secondary font-weight-bold" onClick={ this.handleClick }>Add</button>
 
                             { error ? <p className="text-warning">Please pick up to 3 different ingredients, from our list</p> : null }
                         </div>
@@ -103,7 +103,7 @@ class Search extends Component {
                             </ul>
                 
                             <Link to='/recipes'>
-                                <button type="submit" className="btn btn-primary btn-block" >Find Recipes</button>
+                                <button type="submit" className="btn btn-warning btn-block text-secondary font-weight-bold" >Find Recipes</button>
                             </Link>
                         </div> 
                     </form>
