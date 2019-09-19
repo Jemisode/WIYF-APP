@@ -49,12 +49,13 @@ class RecipeList extends Component {
             <div className="d-flex container flex-column justify-content-center">
                 { recipes.slice(0, recipesDisplayed).map((recipe, index) => (
                     <Link key={index} to="/my-recipe">
-                        <div onClick={ (e) => this.handleChoice(e, recipe.id) } className="card bg-info text-white d-flex align-items-center my-4">
+                        <div onClick={ (e) => this.handleChoice(e, recipe.id) } style={{ textDecoration: "none" }} className="card bg-info text-white d-flex align-items-center my-4">
                             <div className="row no-gutters">
-                                <div className="col-md-4">
+                                {/* not including images currently - will come back to this */}
+                                {/* <div>
                                 <img src={ recipe.image_url } className="card-img" alt={ recipe.image_alt } />
-                                </div>
-                                <div className="col-md-8">
+                                </div> */}
+                                <div>
                                     <div className="card-body">
                                         <h3 className="card-title">{ recipe.name }</h3>
                                         <p className="card-text">{ recipe.description }</p>

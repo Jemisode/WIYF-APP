@@ -31,7 +31,7 @@ class Recipe extends Component {
 
         return !loaded ? <p>Loading...</p> : (
             <div className="card bg-info text-white d-flex align-items-center p-4 mt-5">
-                <h2>{ recipe.name }</h2>
+                <h2 className="text-warning">{ recipe.name }</h2>
                 <p className="mt-3">{ recipe.description }</p>
                 <div className="d-flex flex-row justify-content-center card bg-warning m-0 mt-4">
                     <p className="d-inline text-secondary text-center font-weight-bold m-2 mr-5">Serves { recipe.num_servings }</p>

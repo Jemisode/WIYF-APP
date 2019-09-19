@@ -34,10 +34,10 @@ class Tabs extends Component {
                 </div>
 
                 { ingredients ? 
-                    <div id="Ingredients" className="tabcontent card bg-warning text-dark d-flex w-100 p-2">
+                    <div id="Ingredients" className="tabcontent card bg-warning text-dark d-flex w-100 p-2 mb-4">
                         <Ingredients ingredients={ this.props.ingredients }/>
                     </div> :
-                    <div id="Method" className="tabcontent card bg-warning text-dark d-flex w-100 p-2">
+                    <div id="Method" className="tabcontent card bg-warning text-dark d-flex w-100 p-2 mb-4">
                         <Method method={ this.props.method }/>
                     </div> 
                 }
