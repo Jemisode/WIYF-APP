@@ -1,5 +1,6 @@
 {
   "name": "wiyf",
+  "homepage": "https://jemisode.github.io/WIYF-APP/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -16,11 +17,11 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -35,7 +36,6 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
-    ],
-    "homepage": "https://Jemisode.github.io/WIYF-APP/"
+    ]
   }
 }
