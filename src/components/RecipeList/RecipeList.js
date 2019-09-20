@@ -11,7 +11,8 @@ class RecipeList extends Component {
             recipesDisplayed: 5,
             expanded: false,
             recipes: [],
-            loaded: false
+            loaded: false,
+            error: false,
         };
 
         this.handleClick = this.handleClick.bind(this);
@@ -39,20 +40,25 @@ class RecipeList extends Component {
             return url;
         });       
 
-        axios.get(`/match/${url}`).then(({ data }) => {
-            let recipes = data.data;
-            this.setState({
+        axios.get(`/recipes/match/${url}`).then(({ data }) => {
+            if (!data === "No recipe found! Try different ingredients!") {
+                this.setState({
+                    loaded: true,
+                    // data is either object or array - checking for this and coverting objects to array
+                    recipes: Array.isArray(data) ? data : Object.values(data),
+                });
+            // if no match, returning error
+            } else this.setState({
                 loaded: true,
-                // array of recipes
-                recipes: recipes
+                error: true,
             });
         });
     }
     
     render() {
-        let { recipesDisplayed, recipes, loaded } = this.state;
+        let { recipesDisplayed, recipes, loaded, error } = this.state;
 
-        return !loaded ? <p>Loading...</p> : (
+        return !loaded ? <p>Loading...</p> : error ? <p>No recipes found! Try different ingredients!</p> : (
             <div className="d-flex container flex-column justify-content-center">
                 { recipes.slice(0, recipesDisplayed).map((recipe, index) => (
                     <Link key={index} to="/my-recipe">
