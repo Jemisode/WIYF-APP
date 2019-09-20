@@ -8,7 +8,7 @@ class RecipeList extends Component {
         super(props);
 
         this.state = {
-            recipesDisplayed: 5,
+            recipesDisplayed: 2,
             expanded: false,
             recipes: [],
             loaded: false,
@@ -20,10 +20,10 @@ class RecipeList extends Component {
     }   
 
     handleClick() {
-        this.state.recipesDisplayed === 5 ? (
+        this.state.recipesDisplayed === 2 ? (
             this.setState({ recipesDisplayed: this.state.recipes.length, expanded: true })
         ) : (
-            this.setState({ recipesDisplayed: 5, expanded: false })
+            this.setState({ recipesDisplayed: 2, expanded: false })
         )
     }
 
@@ -63,7 +63,8 @@ class RecipeList extends Component {
     render() {
         let { recipesDisplayed, recipes, loaded, error } = this.state;
 
-        return !loaded ? <p>Loading...</p> : error ? <p>No recipes found! Try different ingredients!</p> : (
+        return !loaded ? <p>Loading...</p> : error ? 
+            <div className="card bg-info"><p className="text-white px-4 pt-2">No recipes found! Try different ingredients!</p></div> : (
             <div className="d-flex container flex-column justify-content-center">
                 { recipes.slice(0, recipesDisplayed).map((recipe, index) => (
                     <Link key={index} to="/my-recipe">
