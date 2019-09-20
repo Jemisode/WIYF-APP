@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.d3b8f617.chunk.css",
-    "main.js": "/static/js/main.20fed7c9.chunk.js",
-    "main.js.map": "/static/js/main.20fed7c9.chunk.js.map",
-    "runtime~main.js": "/static/js/runtime~main.392ce0f8.js",
-    "runtime~main.js.map": "/static/js/runtime~main.392ce0f8.js.map",
-    "static/js/2.9c1d64ea.chunk.js": "/static/js/2.9c1d64ea.chunk.js",
-    "static/js/2.9c1d64ea.chunk.js.map": "/static/js/2.9c1d64ea.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.6e243bc9c2109bdc042d7b219055bdb0.js": "/precache-manifest.6e243bc9c2109bdc042d7b219055bdb0.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.d3b8f617.chunk.css.map": "/static/css/main.d3b8f617.chunk.css.map",
-    "static/media/index.css": "/static/media/fridge.b2fa037f.png",
-    "static/media/tomato.jpg": "/static/media/tomato.f63d4fd4.jpg"
+    "main.css": "/WIYF-APP/static/css/main.9d682920.chunk.css",
+    "main.js": "/WIYF-APP/static/js/main.20fed7c9.chunk.js",
+    "main.js.map": "/WIYF-APP/static/js/main.20fed7c9.chunk.js.map",
+    "runtime~main.js": "/WIYF-APP/static/js/runtime~main.e1691395.js",
+    "runtime~main.js.map": "/WIYF-APP/static/js/runtime~main.e1691395.js.map",
+    "static/js/2.9c1d64ea.chunk.js": "/WIYF-APP/static/js/2.9c1d64ea.chunk.js",
+    "static/js/2.9c1d64ea.chunk.js.map": "/WIYF-APP/static/js/2.9c1d64ea.chunk.js.map",
+    "index.html": "/WIYF-APP/index.html",
+    "precache-manifest.d32fabb18144f29578e34fd3df1ebb29.js": "/WIYF-APP/precache-manifest.d32fabb18144f29578e34fd3df1ebb29.js",
+    "service-worker.js": "/WIYF-APP/service-worker.js",
+    "static/css/main.9d682920.chunk.css.map": "/WIYF-APP/static/css/main.9d682920.chunk.css.map",
+    "static/media/index.css": "/WIYF-APP/static/media/fridge.b2fa037f.png",
+    "static/media/tomato.jpg": "/WIYF-APP/static/media/tomato.f63d4fd4.jpg"
   }
 }
