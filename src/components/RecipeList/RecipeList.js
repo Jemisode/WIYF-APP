@@ -34,24 +34,29 @@ class RecipeList extends Component {
     componentDidMount() {
         let { ids } = this.props;
         let url = "";
+        console.log(ids);
 
         ids.map(id => {
-            url += `${id}/`;
+            url += `/${id}`;
             return url;
-        });       
+        });   
+        
+        this.setState({ error: false });
 
-        axios.get(`/recipes/match/${url}`).then(({ data }) => {
-            if (!data === "No recipe found! Try different ingredients!") {
+        axios.get(`/recipes/match${url}`).then(({ data }) => {
+            if (data !== "No recipe found! Try different ingredients!") {
                 this.setState({
                     loaded: true,
                     // data is either object or array - checking for this and coverting objects to array
                     recipes: Array.isArray(data) ? data : Object.values(data),
                 });
             // if no match, returning error
-            } else this.setState({
-                loaded: true,
-                error: true,
-            });
+            } else {
+                this.setState({
+                    loaded: true,
+                    error: true,
+                });
+            }
         });
     }
     

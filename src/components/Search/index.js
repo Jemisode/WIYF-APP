@@ -12,9 +12,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => { 
     return { 
-        handleIngredient: (ingredient) => dispatch(addIngredient(ingredient)),
-        handleRemoveIngredient: (ingredient) => dispatch(removeIngredient(ingredient)),
-        handleIngredientID: (ingredientID) => dispatch(addIngredientID(ingredientID)),
+        handleIngredient: (id, name) => dispatch(addIngredient(id, name)),
+        handleRemoveIngredient: (id) => dispatch(removeIngredient(id)),
     }; 
 };
 

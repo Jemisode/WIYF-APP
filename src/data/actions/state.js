@@ -1,15 +1,11 @@
-export const addIngredient = (ingredient) => {
-    return { type: "add", ingredient: ingredient };
+export const addIngredient = (id, name) => {
+    return { type: "add", id: id, name: name };
 };
 
-export const removeIngredient = (ingredient) => {
-    return { type: "remove", ingredient: ingredient };
+export const removeIngredient = (id) => {
+    return { type: "remove", id: id };
 };
 
 export const updateRecipe = (id) => {
     return { type: "update", recipe: id };
-};
-
-export const addIngredientID = (ingredientID) => {
-    return { type: "addID", ingredientID: ingredientID };
 };

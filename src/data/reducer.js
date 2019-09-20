@@ -1,23 +1,16 @@
 import initial from './initial';
 
-const addIngredient = (state, { ingredient }) => {
+const addIngredient = (state, { id, name }) => {
     return {
         ...state,
-        chosenIngredients: [...state.chosenIngredients, ingredient], 
+        chosenIngredients: [...state.chosenIngredients, {id: id, name: name}], 
     };
 };
 
-const addIngredientID = (state, { ingredientID }) => {
+const removeIngredient = (state, { id }) => {
     return {
         ...state,
-        chosenIngredientsIDs: [...state.chosenIngredientsIDs, ingredientID], 
-    };
-};
-
-const removeIngredient = (state, { ingredient }) => {
-    return {
-        ...state,
-        chosenIngredients: state.chosenIngredients.filter(item => item !== ingredient), 
+        chosenIngredients: state.chosenIngredients.map(ingredient => ingredient.id ).filter(item => item !== id), 
     };
 };
 
@@ -33,7 +26,6 @@ const reducer = (state, action) => {
         case "add": return addIngredient(state, action);
         case "remove": return removeIngredient(state, action);
         case "update": return updateRecipe(state, action);
-        case "addID": return addIngredientID(state, action);
         default: return state;
     }; 
 };

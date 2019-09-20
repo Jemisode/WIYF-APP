@@ -29,24 +29,23 @@ class Search extends Component {
     } 
 
     handleClick() {
-        let { chosenIngredients, handleIngredient, handleIngredientID } = this.props;
+        let { chosenIngredients, handleIngredient } = this.props;
         let { ingredients } = this.state;
 
-        let ingredient = this.state.ingredient;
-        let ingredientID = this.state.ingredientID;
+        let name = this.state.ingredient;
+        let id = this.state.ingredientID;
 
-        if (chosenIngredients.length <= 2 && ingredients.map(ingredient => ingredient.name).includes(ingredient) && !chosenIngredients.includes(ingredient)) {
-            handleIngredient(ingredient);
-            handleIngredientID(ingredientID);
+        if (chosenIngredients.length <= 2 && ingredients.map(ingredient => ingredient.name).includes(name) && !chosenIngredients.map(ingredient => ingredient.name).includes(name)) {
+            handleIngredient(id, name);
             this.setState({ ingredient: "", ingredientID: 0 });
         } else {
             this.setState({ error: true });
         }
     }
 
-    handleDelete(e, ingredient) {
+    handleDelete(e, id) {
         e.preventDefault();
-        this.props.handleRemoveIngredient(ingredient);
+        this.props.handleRemoveIngredient(id);
     }
 
     componentDidMount() {
@@ -94,8 +93,8 @@ class Search extends Component {
                             <ul className="col">
                                 { chosenIngredients.map((ingredient, index) => (
                                     <div key={ index } className="row">
-                                        <li><h5>{ ingredient }</h5></li>
-                                        <button onClick={ (e) => this.handleDelete(e, ingredient) } className="btn btn-danger btn-sm ml-3 font-weight-bold">X</button>
+                                        <li><h5>{ ingredient.name }</h5></li>
+                                        <button onClick={ (e) => this.handleDelete(e, ingredient.id) } className="btn btn-danger btn-sm ml-3 font-weight-bold">X</button>
                                     </div>
                                 )) }
                             </ul>

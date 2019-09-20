@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import RecipeList from './RecipeList';
 import { updateRecipe } from '../../data/actions/state'
 
-const mapStateToProps = ({ chosenIngredientsIDs }) => { 
+const mapStateToProps = ({ chosenIngredients }) => { 
     return { 
-        ids: chosenIngredientsIDs
+        ids: chosenIngredients.map(ingredient => ingredient.id)
     }; 
 };
 
