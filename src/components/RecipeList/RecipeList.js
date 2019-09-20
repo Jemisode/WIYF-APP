@@ -34,7 +34,6 @@ class RecipeList extends Component {
     componentDidMount() {
         let { ids } = this.props;
         let url = "";
-        console.log(ids);
 
         ids.map(id => {
             url += `/${id}`;
