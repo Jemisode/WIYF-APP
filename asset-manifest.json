@@ -1,17 +1,16 @@
 {
   "files": {
     "main.css": "/WIYF-APP/static/css/main.9d682920.chunk.css",
-    "main.js": "/WIYF-APP/static/js/main.20fed7c9.chunk.js",
-    "main.js.map": "/WIYF-APP/static/js/main.20fed7c9.chunk.js.map",
+    "main.js": "/WIYF-APP/static/js/main.d69e14bb.chunk.js",
+    "main.js.map": "/WIYF-APP/static/js/main.d69e14bb.chunk.js.map",
     "runtime~main.js": "/WIYF-APP/static/js/runtime~main.e1691395.js",
     "runtime~main.js.map": "/WIYF-APP/static/js/runtime~main.e1691395.js.map",
-    "static/js/2.9c1d64ea.chunk.js": "/WIYF-APP/static/js/2.9c1d64ea.chunk.js",
-    "static/js/2.9c1d64ea.chunk.js.map": "/WIYF-APP/static/js/2.9c1d64ea.chunk.js.map",
+    "static/js/2.1620fd72.chunk.js": "/WIYF-APP/static/js/2.1620fd72.chunk.js",
+    "static/js/2.1620fd72.chunk.js.map": "/WIYF-APP/static/js/2.1620fd72.chunk.js.map",
     "index.html": "/WIYF-APP/index.html",
-    "precache-manifest.d32fabb18144f29578e34fd3df1ebb29.js": "/WIYF-APP/precache-manifest.d32fabb18144f29578e34fd3df1ebb29.js",
+    "precache-manifest.ba0cf95c513424e1f12a0b039864c4b7.js": "/WIYF-APP/precache-manifest.ba0cf95c513424e1f12a0b039864c4b7.js",
     "service-worker.js": "/WIYF-APP/service-worker.js",
     "static/css/main.9d682920.chunk.css.map": "/WIYF-APP/static/css/main.9d682920.chunk.css.map",
-    "static/media/index.css": "/WIYF-APP/static/media/fridge.b2fa037f.png",
-    "static/media/tomato.jpg": "/WIYF-APP/static/media/tomato.f63d4fd4.jpg"
+    "static/media/index.css": "/WIYF-APP/static/media/fridge.b2fa037f.png"
   }
 }
