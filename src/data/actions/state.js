@@ -9,3 +9,7 @@ export const removeIngredient = (ingredient) => {
 export const updateRecipe = (id) => {
     return { type: "update", recipe: id };
 };
+
+export const addIngredientID = (ingredientID) => {
+    return { type: "addID", ingredientID: ingredientID };
+};

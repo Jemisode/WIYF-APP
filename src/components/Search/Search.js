@@ -9,6 +9,7 @@ class Search extends Component {
 
         this.state = {
             ingredient: "",
+            ingredientID: 0,
             error: false,
             ingredients: [],
             loaded: false
@@ -22,19 +23,22 @@ class Search extends Component {
     handleChange(e) {
         this.setState({
             ingredient: e.currentTarget.value,
+            ingredientID: this.state.ingredients.find(ingredient => ingredient.name === e.currentTarget.value).id,
             error: false
         });
     } 
 
     handleClick() {
-        let { chosenIngredients, handleIngredient } = this.props;
+        let { chosenIngredients, handleIngredient, handleIngredientID } = this.props;
         let { ingredients } = this.state;
 
         let ingredient = this.state.ingredient;
+        let ingredientID = this.state.ingredientID;
 
-        if (chosenIngredients.length <= 2 && ingredients.includes(ingredient) && !chosenIngredients.includes(ingredient)) {
+        if (chosenIngredients.length <= 2 && ingredients.map(ingredient => ingredient.name).includes(ingredient) && !chosenIngredients.includes(ingredient)) {
             handleIngredient(ingredient);
-            this.setState({ ingredient: "" });
+            handleIngredientID(ingredientID);
+            this.setState({ ingredient: "", ingredientID: 0 });
         } else {
             this.setState({ error: true });
         }
@@ -47,15 +51,9 @@ class Search extends Component {
 
     componentDidMount() {
         axios.get("/ingredients").then(({ data }) => {
-            let ingredients = [];
-            data.map(ingredient => {
-                // response includes ingredient objects, with id and name keys
-                ingredients = [...ingredients, ingredient.name]
-            });
             this.setState({
                 loaded: true,
-                // sorting ingredients into alphabetical order
-                ingredients: ingredients.sort()
+                ingredients: data
             });
         });
     }
@@ -81,9 +79,9 @@ class Search extends Component {
                             />
 
                             <datalist id="ingredients">
-                                { ingredients.map((ingredient, index) => (
-                                    <option key={ index } value={ ingredient } />
-                                )) }
+                                { ingredients.map((ingredient) => {
+                                    return (<option key={ ingredient.id } value={ ingredient.name } />);
+                                }) }
                             </datalist>
 
                             <button type="button" className="btn btn-warning btn-block my-3 text-secondary font-weight-bold" onClick={ this.handleClick }>Add</button>

@@ -7,6 +7,13 @@ const addIngredient = (state, { ingredient }) => {
     };
 };
 
+const addIngredientID = (state, { ingredientID }) => {
+    return {
+        ...state,
+        chosenIngredientsIDs: [...state.chosenIngredientsIDs, ingredientID], 
+    };
+};
+
 const removeIngredient = (state, { ingredient }) => {
     return {
         ...state,
@@ -26,6 +33,7 @@ const reducer = (state, action) => {
         case "add": return addIngredient(state, action);
         case "remove": return removeIngredient(state, action);
         case "update": return updateRecipe(state, action);
+        case "addID": return addIngredientID(state, action);
         default: return state;
     }; 
 };
