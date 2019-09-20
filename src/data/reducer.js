@@ -10,7 +10,7 @@ const addIngredient = (state, { id, name }) => {
 const removeIngredient = (state, { id }) => {
     return {
         ...state,
-        chosenIngredients: state.chosenIngredients.map(ingredient => ingredient.id ).filter(item => item !== id), 
+        chosenIngredients: state.chosenIngredients.filter(ingredient => ingredient.id !== id ), 
     };
 };
 
