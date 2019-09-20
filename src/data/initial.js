@@ -1,10 +1,7 @@
-import React from 'react';
-import placeholder from '../assets/tomato.jpg';
-console.log(placeholder);
-
 const initial = {
     chosenIngredients: [],
-    chosenRecipe: 1
+    chosenRecipe: 1,
+    images: [ "../assets/flapjack2.jpg"]
 };
 
 export default initial;
