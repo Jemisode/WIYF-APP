@@ -21,9 +21,11 @@ class Search extends Component {
     }   
     
     handleChange(e) {
+        let id = this.state.ingredients.find(ingredient => ingredient.name === e.currentTarget.value);
+
         this.setState({
             ingredient: e.currentTarget.value,
-            ingredientID: this.state.ingredients.find(ingredient => ingredient.name === e.currentTarget.value).id,
+            ingredientID: id === undefined ? 0 : id.id,
             error: false
         });
     } 
