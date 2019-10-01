@@ -5,8 +5,6 @@ import {
     Route, 
 } from 'react-router-dom';
 
-import '../index.css'
-
 import Header from './Header/Header';
 import Search from './Search';
 import RecipeList from './RecipeList';
