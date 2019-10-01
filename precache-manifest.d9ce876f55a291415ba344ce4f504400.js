@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3d193b647e2984798145eed90192ca48",
+    "revision": "37c78fe5fe926794605b22cc4c7577e3",
     "url": "/WIYF-APP/index.html"
   },
   {
-    "revision": "ecc368bb9d28d1589c52",
+    "revision": "a7d7f3abcff5260738cc",
     "url": "/WIYF-APP/static/css/main.9d682920.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/WIYF-APP/static/js/2.1620fd72.chunk.js"
   },
   {
-    "revision": "ecc368bb9d28d1589c52",
-    "url": "/WIYF-APP/static/js/main.d69e14bb.chunk.js"
+    "revision": "a7d7f3abcff5260738cc",
+    "url": "/WIYF-APP/static/js/main.b0584920.chunk.js"
   },
   {
     "revision": "7aa7a07d074e17c5541a",
